@@ -1,33 +1,35 @@
 @echo off
-echo Installing required libraries for BalloonPop game...
+echo ==============================================
+echo Balloon Pop Game - Setup Script for Windows
+echo ==============================================
+
+REM Check if Python 3.10 is installed
+echo [CHECK] Detecting Python 3.10...
+py -3.10 --version >nul 2>&1
+IF ERRORLEVEL 1 (
+    echo [ERROR] Python 3.10 is not installed or not added to PATH.
+    echo Please install Python 3.10 and ensure it's added to your system PATH.
+    pause
+    exit /b
+)
+
+echo [INFO] Python 3.10 detected.
 echo.
 
-python -m pip install --upgrade pip
+REM Upgrade pip
+echo [STEP 1] Upgrading pip...
+py -3.10 -m pip install --upgrade pip
 echo.
 
-echo Installing pygame...
-python -m pip install pygame
+REM Install requirements
+echo [STEP 2] Installing required Python libraries...
+py -3.10 -m pip install -r requirements.txt
 echo.
 
-echo Installing opencv-python...
-python -m pip install opencv-python
+REM Done
+echo [✅ SUCCESS] All dependencies are installed!
 echo.
-
-echo Installing cvzone...
-python -m pip install cvzone
-echo.
-
-echo Installing mediapipe...
-python -m pip install mediapipe
-echo.
-
-echo Installing numpy...
-python -m pip install numpy
-echo.
-
-echo.
-echo Installation complete!
-echo.
-echo To run the game, use the command: py -3.10 BalloonPop.py
+echo [🎮 TO PLAY] Use the command:
+echo     py -3.10 BalloonPop.py
 echo.
 pause
