@@ -26,10 +26,9 @@ echo [STEP 2] Installing required Python libraries...
 py -3.10 -m pip install -r requirements.txt
 echo.
 
-REM Done
 echo [✅ SUCCESS] All dependencies are installed!
 echo.
 echo [🎮 TO PLAY] Use the command:
-echo     py -3.10 BalloonPop.py
+echo py -3.10 BalloonPop.py
 echo.
 pause
